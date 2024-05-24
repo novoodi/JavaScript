@@ -20,9 +20,9 @@ async function getUser() {	//	로딩	시	사용자	정보를	가져오는	함수
             // 이때 버튼 이름을 수정으로 만들어준다.
             edit.textContent = '수정';
             edit.addEventListener('click', async () => {	//	수정 버튼 클릭
-                const name = prompt('바꿀	이름을	입력하세요');
+                const name = prompt('바꿀 이름을 입력하세요');
                 if (!name) {
-                    return alert('이름을	반드시	입력하셔야	합니다');
+                    return alert('이름을 반드시	입력하셔야	합니다');
                 }
                 try {
                     await axios.put('/user/' + key, { name });
@@ -41,6 +41,8 @@ async function getUser() {	//	로딩	시	사용자	정보를	가져오는	함수
                     console.error(err);
                 }
             });
+            const report = document.createElement('button');
+            report.textContent = ''
             userDiv.appendChild(span);
             userDiv.appendChild(edit);
             userDiv.appendChild(remove);
@@ -59,7 +61,7 @@ document.getElementById('form').addEventListener('submit', async (e) => {
     // 
     const name = e.target.username.value;
     if (!name) {
-        return alert('이름을	입력하세요');
+        return alert('이름을 입력하세요');
     }
     try {
         await axios.post('/user', { name });

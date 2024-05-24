@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Write Page</title>
+    <link rel="stylesheet" href="./restFront.css" />
+</head>
+
+<body>
+    <h2>Please enter your password to write</h2>
+    <form id="passwordForm">
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="writeSection" style="display:none;">
+        <h2>Write your post</h2>
+        <textarea id="postContent" placeholder="Write here..."></textarea>
+        <button id="submitPost">Submit Post</button>
+    </div>
+    <script>
+        document.getElementById('passwordForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            if (password === 'yourpassword') { // 원하는 비밀번호로 변경
+                document.getElementById('writeSection').style.display = 'block';
+                document.getElementById('passwordForm').style.display = 'none';
+            } else {
+                alert('Incorrect password');
+            }
+        });
+
+        document.getElementById('submitPost').addEventListener('click', function () {
+            const content = document.getElementById('postContent').value;
+            alert('Post submitted: ' + content);
+            // 여기에 글을 제출하는 로직을 추가하세요
+        });
+    </script>
+</body>
+
+</html>

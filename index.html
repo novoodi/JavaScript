@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>RESTful SERVER</title>
+    <link rel="stylesheet" href="./restFront.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/report">report</a>
+    </nav>
+    <button id="moveButton">Go to Write Page</button>
+    <script>
+        document.getElementById('moveButton').addEventListener('click', function () {
+            window.location.href = '/write.html';
+        });
+    </script>
+</body>
+
+</html>
